@@ -1,11 +1,13 @@
-.min-h-screen.flex.items-center.justify-center style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);"
+.min-h-screen.flex.items-center.justify-center.bg-brasil-gradient
   .w-full.max-w-md.p-6
-    .bg-white.rounded-2xl.shadow-2xl.p-8
+    .bg-white.rounded-2xl.shadow-2xl.p-8.border-4.border-brasil-gold
       .text-center.mb-8
-        .inline-block.bg-slate-100.rounded-full.p-4.mb-4
-          svg.w-12.h-12.text-slate-700 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+        .inline-block.bg-brasil-green-light.rounded-full.p-4.mb-4
+          svg.w-12.h-12.text-brasil-green xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
             path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"
-        h2.text-3xl.font-bold.text-gray-900 = t('devise.passwords.new.title')
+        .flex.items-center.justify-center.gap-2.mb-2
+          span.text-2xl 🇧🇷
+          h2.text-3xl.font-extrabold.text-brasil-blue = t('devise.passwords.new.title')
         p.text-gray-600.mt-2 = t('devise.passwords.new.subtitle')
 
       = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, class: "space-y-6" }) do |f|
@@ -20,12 +22,12 @@
             = f.email_field :email, autofocus: true, autocomplete: "email", class: "w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition", placeholder: t('devise.passwords.new.email_placeholder')
 
         div
-          = f.submit t('devise.passwords.new.send_reset_button'), class: "w-full bg-teal-600 hover:bg-teal-700 text-white px-4 py-3 rounded-lg font-semibold transition cursor-pointer shadow-md"
+          = f.submit t('devise.passwords.new.send_reset_button'), class: "w-full btn-brasil cursor-pointer"
 
       .mt-6.text-center
         .border-t.border-gray-200.pt-6
           = render "devise/shared/links"
 
     .text-center.mt-6
-      p.text-slate-300.text-sm
+      p.text-white.text-sm.font-semibold.drop-shadow-lg
         = t('devise.shared.tagline')

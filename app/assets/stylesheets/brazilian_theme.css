@@ -1,0 +1,280 @@
+/*
+ * VamoMarcar - Brazilian Theme
+ * Cores vibrantes e energia brasileira! 🇧🇷
+ */
+
+:root {
+  /* Brazilian Flag Colors */
+  --brasil-green: #009b3a;
+  --brasil-green-dark: #00802e;
+  --brasil-green-darker: #006622;
+  --brasil-green-light: #c8e6c9;
+  --brasil-green-lighter: #e8f5e9;
+
+  --brasil-gold: yellow;
+  --brasil-gold-dark: #B8860B;
+  --brasil-gold-light: #F4E4C1;
+  --brasil-gold-lighter: #FAF3E0;
+
+  --brasil-blue: #10347b;
+  --brasil-blue-dark: #001f5c;
+
+  /* Tropical Accent Colors */
+  --tropical-orange: #ff6b35;
+  --tropical-pink: #e63946;
+  --tropical-green: #06d6a0;
+}
+
+/* Primary Button - Brazilian Style */
+.btn-brasil {
+  background: var(--brasil-green);
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  transform: translateY(0);
+}
+
+.btn-brasil:hover {
+  background: var(--brasil-green-dark);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+.btn-brasil:active {
+  transform: translateY(0);
+}
+
+/* Secondary Button - Blue */
+.btn-brasil-secondary {
+  background: var(--brasil-blue);
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  transform: translateY(0);
+}
+
+.btn-brasil-secondary:hover {
+  background: var(--brasil-blue-dark);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.25);
+  transform: translateY(-2px);
+}
+
+.btn-brasil-secondary:active {
+  transform: translateY(0);
+}
+
+/* Danger Button - Red */
+.btn-brasil-danger {
+  background: var(--tropical-pink);
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  transform: translateY(0);
+}
+
+.btn-brasil-danger:hover {
+  background: #b91c1c;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.25);
+  transform: translateY(-2px);
+}
+
+.btn-brasil-danger:active {
+  transform: translateY(0);
+}
+
+/* Gold Button - Special Occasions */
+.btn-brasil-gold {
+  background: var(--brasil-gold);
+  color: var(--brasil-blue);
+  font-weight: 700;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.btn-brasil-gold:hover {
+  background: var(--brasil-gold-dark);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.25);
+  transform: scale(1.05);
+}
+
+/* Card with Brazilian Flair */
+.card-brasil {
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid var(--brasil-green);
+  transition: all 0.3s ease;
+}
+
+.card-brasil:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.15);
+  transform: translateY(-4px);
+}
+
+/* Celebration Badge */
+.badge-celebration {
+  background: var(--brasil-gold);
+  color: var(--brasil-blue);
+  font-weight: 700;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  animation: pulse-subtle 2s ease-in-out infinite;
+}
+
+@keyframes pulse-subtle {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+/* Brazilian Gradient Background */
+.bg-brasil-gradient {
+  background: linear-gradient(135deg, var(--brasil-green) 0%, var(--brasil-blue) 100%);
+}
+
+.bg-brasil-gradient-warm {
+  background: linear-gradient(135deg, var(--brasil-gold) 0%, var(--tropical-orange) 100%);
+}
+
+.bg-brasil-gradient-full {
+  background: linear-gradient(135deg,
+    var(--brasil-green) 0%,
+    var(--brasil-gold) 50%,
+    var(--brasil-blue) 100%);
+}
+
+/* Text shadows for gradient backgrounds */
+.bg-brasil-gradient h1,
+.bg-brasil-gradient h2,
+.bg-brasil-gradient h3,
+.bg-brasil-gradient p,
+.bg-brasil-gradient span,
+.bg-brasil-gradient a {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.bg-brasil-gradient-warm h1,
+.bg-brasil-gradient-warm h2,
+.bg-brasil-gradient-warm h3,
+.bg-brasil-gradient-warm p {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Success Messages - Brazilian Style */
+.alert-success-brasil {
+  background: var(--brasil-green-lighter);
+  border: 2px solid var(--brasil-green);
+  color: var(--brasil-green-darker);
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 600;
+}
+
+.alert-celebration {
+  background: var(--brasil-gold-lighter);
+  border: 2px solid var(--brasil-gold);
+  color: var(--brasil-blue);
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 600;
+}
+
+/* Navbar Brazilian Style */
+.navbar-brasil {
+  background: linear-gradient(to right, var(--brasil-green), var(--brasil-green-dark));
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Text Colors */
+.text-brasil-green {
+  color: var(--brasil-green);
+}
+
+.text-brasil-gold {
+  color: var(--brasil-gold);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  font-weight: 700;
+}
+
+.text-brasil-blue {
+  color: var(--brasil-blue);
+}
+
+/* Background Colors */
+.bg-brasil-green {
+  background-color: var(--brasil-green);
+}
+
+.bg-brasil-green-light {
+  background-color: var(--brasil-green-light);
+}
+
+.bg-brasil-gold {
+  background-color: var(--brasil-gold);
+}
+
+.bg-brasil-blue {
+  background-color: var(--brasil-blue);
+}
+
+/* Hover States */
+.hover-brasil-green:hover {
+  background-color: var(--brasil-green-dark);
+}
+
+.hover-brasil-gold:hover {
+  background-color: var(--brasil-gold-dark);
+}
+
+/* Border Colors */
+.border-brasil-green {
+  border-color: var(--brasil-green);
+}
+
+.border-brasil-gold {
+  border-color: var(--brasil-gold);
+}
+
+/* Links */
+a.link-brasil {
+  color: var(--brasil-green);
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+a.link-brasil:hover {
+  color: var(--brasil-green-dark);
+  text-decoration: underline;
+}
+
+/* Input Focus States */
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: var(--brasil-green);
+  box-shadow: 0 0 0 3px rgba(0, 155, 58, 0.1);
+}
+
+/* Checkbox Brazilian Style */
+input[type="checkbox"]:checked {
+  background-color: var(--brasil-green);
+  border-color: var(--brasil-green);
+}

@@ -33,7 +33,7 @@ pt-BR:
       owner: "Proprietário"
       view_details: "Ver Detalhes"
       delete_confirm: "Tem certeza?"
-      leave: "Sair do Grupo"
+      leave: "Sair"
       leave_confirm: "Tem certeza que deseja sair?"
       public_groups: "Grupos Públicos Disponíveis"
       owner_label: "Proprietário: %{owner}"
@@ -208,7 +208,7 @@ pt-BR:
   devise:
     sessions:
       new:
-        title: "Bem-vindo de Volta"
+        title: "Bora Marcar"
         subtitle: "Faça login para coordenar seus encontros"
         email_label: "Email"
         email_placeholder: "seu@email.com"

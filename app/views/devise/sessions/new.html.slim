@@ -1,11 +1,13 @@
-.min-h-screen.flex.items-center.justify-center style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);"
+.min-h-screen.flex.items-center.justify-center.bg-brasil-gradient
   .w-full.max-w-md.p-6
-    .bg-white.rounded-2xl.shadow-2xl.p-8
+    .bg-white.rounded-2xl.shadow-2xl.p-8.border-4.border-brasil-gold
       .text-center.mb-8
-        .inline-block.bg-slate-100.rounded-full.p-4.mb-4
-          svg.w-12.h-12.text-slate-700 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+        .inline-block.bg-brasil-green-light.rounded-full.p-4.mb-4
+          svg.w-12.h-12.text-brasil-green xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
             path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-        h2.text-3xl.font-bold.text-gray-900 = t('devise.sessions.new.title')
+        .flex.items-center.justify-center.gap-2.mb-2
+          span.text-2xl 🇧🇷
+          h2.text-3xl.font-extrabold.text-brasil-blue = t('devise.sessions.new.title')
         p.text-gray-600.mt-2 = t('devise.sessions.new.subtitle')
 
       = form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "space-y-6" }) do |f|
@@ -31,12 +33,12 @@
             = f.label :remember_me, t('devise.sessions.new.remember_me'), class: "ml-2 text-sm text-gray-700"
 
         div
-          = f.submit t('devise.sessions.new.sign_in_button'), class: "w-full bg-teal-600 hover:bg-teal-700 text-white px-4 py-3 rounded-lg font-semibold transition cursor-pointer shadow-md"
+          = f.submit t('devise.sessions.new.sign_in_button'), class: "w-full btn-brasil cursor-pointer"
 
       .mt-6.text-center
         .border-t.border-gray-200.pt-6
           = render "devise/shared/links"
 
     .text-center.mt-6
-      p.text-slate-300.text-sm
+      p.text-white.text-sm.font-semibold.drop-shadow-lg
         = t('devise.shared.tagline')

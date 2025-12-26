@@ -18,44 +18,48 @@ html
     = javascript_importmap_tags
 
   body class="bg-gray-50 min-h-screen"
-    nav class="bg-white shadow-sm fixed top-0 left-0 right-0 z-50"
+    nav class="navbar-brasil shadow-lg fixed top-0 left-0 right-0 z-50"
       .container.mx-auto.px-4.py-4
         .flex.justify-between.items-center
-          a href="/" class="text-2xl font-bold text-teal-600"
-            | VamoMarcar
+          .flex.items-center.gap-2
+            span.text-2xl 🇧🇷
+            a href="/" class="text-2xl font-bold text-brasil-gold"
+              | VamoMarcar
 
           .flex.gap-4.items-center
             / Language Switcher
             div data-controller="dropdown" class="relative"
-              button type="button" class="flex items-center gap-2 text-gray-700 hover:text-teal-600 transition" data-action="click->dropdown#toggle"
+              button type="button" class="flex items-center gap-2 text-white hover:text-brasil-gold transition font-semibold" data-action="click->dropdown#toggle"
                 - if I18n.locale == :"pt-BR"
                   span 🇧🇷 PT
                 - else
                   span 🇺🇸 EN
                 svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                   path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"
-              div data-dropdown-target="menu" class="hidden absolute right-0 mt-2 w-32 bg-white rounded-lg shadow-xl border border-gray-200 z-10"
+              div data-dropdown-target="menu" class="hidden absolute right-0 mt-2 w-32 bg-white rounded-lg shadow-xl border-2 border-brasil-gold z-10"
                 .py-1
-                  = button_to switch_locale_path(locale: "pt-BR"), method: :post, class: "block w-full text-left px-4 py-2 text-gray-700 hover:bg-teal-50 transition #{'bg-teal-50 font-semibold' if I18n.locale == :'pt-BR'}" do
+                  = button_to switch_locale_path(locale: "pt-BR"), method: :post, class: "block w-full text-left px-4 py-2 text-gray-700 hover:bg-brasil-green-light transition #{'bg-brasil-green-light font-semibold' if I18n.locale == :'pt-BR'}" do
                     span 🇧🇷 Português
-                  = button_to switch_locale_path(locale: "en"), method: :post, class: "block w-full text-left px-4 py-2 text-gray-700 hover:bg-teal-50 transition #{'bg-teal-50 font-semibold' if I18n.locale == :en}" do
+                  = button_to switch_locale_path(locale: "en"), method: :post, class: "block w-full text-left px-4 py-2 text-gray-700 hover:bg-brasil-green-light transition #{'bg-brasil-green-light font-semibold' if I18n.locale == :en}" do
                     span 🇺🇸 English
 
             - if user_signed_in?
-              span class="text-gray-700" = current_user.email
-              = button_to t('nav.sign_out'), destroy_user_session_path, method: :delete, class: "bg-slate-600 hover:bg-slate-700 text-white px-4 py-2 rounded-lg transition", data: { turbo: false }
+              span class="text-white font-semibold" = current_user.email.split('@').first
+              = button_to t('nav.sign_out'), destroy_user_session_path, method: :delete, class: "bg-brasil-blue hover:bg-brasil-blue-dark text-white px-4 py-2 rounded-lg transition font-semibold", data: { turbo: false }
             - else
-              = link_to t('nav.sign_in'), new_user_session_path, class: "text-teal-600 hover:text-teal-800"
-              = link_to t('nav.sign_up'), new_user_registration_path, class: "bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded-lg transition"
+              = link_to t('nav.sign_in'), new_user_session_path, class: "text-white hover:text-brasil-gold transition font-semibold"
+              = link_to t('nav.sign_up'), new_user_registration_path, class: "btn-brasil"
 
     - if notice.present?
       .container.mx-auto.px-4.mt-20
-        .bg-green-100.border.border-green-400.text-green-700.px-4.py-3.rounded.relative role="alert"
+        .alert-success-brasil
+          span.text-2xl 🎉
           span.block.sm:inline = notice
 
     - if alert.present?
       .container.mx-auto.px-4.mt-20
-        .bg-red-100.border.border-red-400.text-red-700.px-4.py-3.rounded.relative role="alert"
+        .bg-red-100.border-2.border-red-400.text-red-700.px-4.py-3.rounded-lg.relative.flex.items-center.gap-3 role="alert"
+          span.text-2xl ⚠️
           span.block.sm:inline = alert
 
     main class="container mx-auto mt-24 px-4"

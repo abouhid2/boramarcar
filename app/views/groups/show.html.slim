@@ -3,26 +3,26 @@
     .flex.justify-between.items-start
       div
         .flex.items-center.gap-3.mb-2
-          = link_to groups_path, class: "text-gray-600 hover:text-gray-900 transition" do
+          = link_to groups_path, class: "text-brasil-green hover:text-brasil-green-dark transition" do
             svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"
               path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"
-          h1.text-3xl.font-bold.text-gray-900 = @group.name
+          h1.text-3xl.font-bold.text-brasil-blue = @group.name
         p.text-gray-600.text-lg = @group.description
         .flex.gap-2.mt-3
           - if @group.is_public
-            span.inline-block.bg-green-100.text-green-800.text-sm.px-3.py-1.rounded = t('groups.show.public')
+            span.inline-block.bg-brasil-green-light.text-brasil-green-darker.text-sm.px-3.py-1.rounded.font-semibold = t('groups.show.public')
           - else
             span.inline-block.bg-gray-100.text-gray-800.text-sm.px-3.py-1.rounded = t('groups.show.private')
           - if @group.weekends_only
-            span.inline-block.bg-blue-100.text-blue-800.text-sm.px-3.py-1.rounded = t('groups.show.weekends_only')
+            span.inline-block.bg-brasil-blue.text-white.text-sm.px-3.py-1.rounded.font-semibold = t('groups.show.weekends_only')
           - if @group.owner == current_user
-            span.inline-block.bg-purple-100.text-purple-800.text-sm.px-3.py-1.rounded = t('groups.show.you_are_owner')
+            span.badge-celebration.text-sm.px-3.py-1 = t('groups.show.you_are_owner')
 
       .flex.gap-3
-        = link_to t('groups.show.results'), results_group_path(@group), class: "bg-slate-600 hover:bg-slate-700 text-white px-6 py-3 rounded-lg font-semibold transition"
+        = link_to t('groups.show.results'), results_group_path(@group), class: "btn-brasil-secondary px-6 py-3"
         - if @group.owner == current_user
           div data-controller="dropdown" class="relative"
-            button type="button" class="bg-gray-200 hover:bg-gray-300 text-gray-700 px-4 py-3 rounded-lg font-semibold transition flex items-center gap-2" data-action="click->dropdown#toggle"
+            button type="button" class="btn-brasil-secondary px-4 py-3 flex items-center gap-2" data-action="click->dropdown#toggle"
               svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                 path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
                 path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
@@ -65,15 +65,15 @@
                   p.text-sm.text-teal-700[data-calendar-target="selectionText"] = t('groups.show.select_dates')
 
                 .space-y-2
-                  button.w-full.bg-blue-100.hover:bg-blue-200.text-blue-800.px-4.py-2.rounded-lg.font-medium.transition[type="button" data-action="click->calendar#selectWholeMonth"]
+                  button.w-full.bg-brasil-blue.hover:bg-brasil-blue-dark.text-white.px-4.py-2.rounded-lg.font-medium.transition[type="button" data-action="click->calendar#selectWholeMonth"]
                     = t('groups.show.select_whole_month')
 
-                  button.w-full.bg-purple-100.hover:bg-purple-200.text-purple-800.px-4.py-2.rounded-lg.font-medium.transition[type="button" data-action="click->calendar#selectAllHolidays"]
+                  button.w-full.bg-brasil-gold.hover:bg-brasil-gold-dark.text-brasil-blue.px-4.py-2.rounded-lg.font-medium.transition.font-semibold[type="button" data-action="click->calendar#selectAllHolidays"]
                     = t('groups.show.add_holidays')
 
                   .grid.grid-cols-2.gap-2
-                    = form.submit t('common.add'), class: "bg-teal-600 hover:bg-teal-700 text-white px-4 py-3 rounded-lg font-semibold transition cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed", disabled: true, data: { calendar_target: "submitButton" }
-                    button.bg-red-600.hover:bg-red-700.text-white.px-4.py-3.rounded-lg.font-semibold.transition.disabled:opacity-50.disabled:cursor-not-allowed[type="button" disabled=true data-action="click->calendar#removeAvailability" data-calendar-target="removeButton"]
+                    = form.submit t('common.add'), class: "btn-brasil px-4 py-3 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed", disabled: true, data: { calendar_target: "submitButton" }
+                    button.btn-brasil-danger.px-4.py-3.disabled:opacity-50.disabled:cursor-not-allowed[type="button" disabled=true data-action="click->calendar#removeAvailability" data-calendar-target="removeButton"]
                       = t('groups.show.remove')
 
                   button.w-full.text-teal-600.hover:text-teal-800.text-sm.hidden[type="button" data-action="click->calendar#clearSelection" data-calendar-target="clearButton"]
@@ -89,7 +89,7 @@
                   = hidden_field_tag :current_month, @current_month.strftime("%Y-%m-%d")
                   - @user_availability.each do |availability|
                     = hidden_field_tag "availability_ids[]", availability.id, id: "batch_#{availability.id}", disabled: true
-                  button type="button" class="bg-red-600 hover:bg-red-700 text-white px-3 py-1.5 rounded-lg text-sm font-semibold transition" data-action="click->batch-select#submitBatch"
+                  button type="button" class="btn-brasil-danger px-3 py-1.5 text-sm" data-action="click->batch-select#submitBatch"
                     = t('groups.show.remove_selected')
 
               - if @user_availability.any?
@@ -122,7 +122,7 @@
                   .flex.items-center.gap-2.min-w-0.flex-1
                     span.font-medium.text-gray-900.truncate = member.email.split('@').first
                     - if member == @group.owner
-                      span.inline-block.bg-purple-100.text-purple-800.text-xs.px-1.5.py-0.5.rounded = t('groups.index.owner')
+                      span.inline-block.bg-brasil-gold-light.text-brasil-blue.text-xs.px-1.5.py-0.5.rounded.font-semibold = t('groups.index.owner')
 
                   .flex.items-center.gap-2
                     / Show member's availability count
@@ -134,7 +134,7 @@
 
           - if @group.is_public && !@members.include?(current_user)
             .mt-3.pt-3.border-t.border-gray-200
-              = button_to t('groups.show.join'), join_group_path(@group), class: "w-full bg-teal-600 hover:bg-teal-700 text-white px-3 py-2 rounded-lg font-semibold transition text-sm"
+              = button_to t('groups.show.join'), join_group_path(@group), class: "w-full btn-brasil px-3 py-2 text-sm"
 
     / Holiday Selection Modal
     div id="holidayModal" class="fixed inset-0 bg-gray-900 bg-opacity-75 hidden z-50" data-calendar-target="modal" data-action="click->calendar#closeModalBackdrop"
@@ -177,7 +177,7 @@
 
           / Modal Footer
           div class="flex justify-end gap-3 p-6 border-t bg-gray-50 flex-shrink-0"
-            button type="button" class="px-6 py-3 bg-gray-300 hover:bg-gray-400 text-gray-800 rounded-lg font-semibold transition" data-action="click->calendar#closeModal"
+            button type="button" class="btn-brasil-secondary px-6 py-3" data-action="click->calendar#closeModal"
               = t('common.cancel')
-            button type="button" class="px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-lg font-semibold transition disabled:opacity-50 disabled:cursor-not-allowed" data-action="click->calendar#confirmAddHolidays" data-calendar-target="confirmButton" disabled=true
+            button type="button" class="btn-brasil-gold px-6 py-3 disabled:opacity-50 disabled:cursor-not-allowed" data-action="click->calendar#confirmAddHolidays" data-calendar-target="confirmButton" disabled=true
               = t('availabilities.holiday_modal.confirm')
